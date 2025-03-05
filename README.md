@@ -1,2 +1,2 @@
 # Example DBT Code
-This repository contains example dbt code that I wrote when I worked on the Kamala Harris campaign's data team in 2024 in Pennsylvania for a rejected ballot dashboard I built in Hex. All proportietry information has been omitted.
+This repository contains example dbt code for a rejected ballot dashboard that I built in Hex during my time on the Kamala Harris campaign's data team in 2024 in Pennsylvania. All proportietry and senstivie information has been omitted before publishing.
