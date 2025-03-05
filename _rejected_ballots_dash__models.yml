@@ -1,0 +1,93 @@
+version: 2
+
+models:
+  - name: rpt_rejected_ballots_by_dims
+    description: >
+      This model joins early voting data, demographic details, and support scores to create a universe of voters with early voting activity, ballot rejections, and curable ballots, while cleaning up column values for standardized reporting.
+    columns:
+      - name: avev_id
+        description: Unique ID from the early voting dataset.
+      - name: myv_van_id
+        description: VAN ID associated with the voter.
+      - name: ballot_rejected
+        description: Indicates whether the ballot was rejected (1 = rejected).
+      - name: early_voted
+        description: Indicates whether the individual early voted (1 = voted early).
+      - name: ballot_curable
+        description: Indicates whether the rejected ballot can be cured (1 = curable).
+      - name: ballot_mailed_not_return
+      - name: reason_ballot_rejected
+        description: The reason the ballot was rejected.
+      - name: county_name_upper
+        description: Uppercase county name, coalesced from different sources.
+      - name: county_name_reg
+        description: County name in regular case, coalesced from different sources.
+      - name: gender
+        description: Gender of the voter, mapped to 'Male', 'Female', or 'Unknown'.
+      - name: ethnicity
+        description: Ethnicity of the voter, mapped to common ethnicity names.
+      - name: white_yes_no
+        description: Indicates if the voter is White (1 = White, 0 = Not White, null if unknown).
+      - name: religion
+        description: Religion of the voter, mapped to standardized religious groups.
+      - name: education_level
+        description: Education level of the voter, categorized as 'College', 'Non-College', or 'Unknown'.
+      - name: generation
+        description: Generation of the voter, mapped to age ranges such as 'Gen Z', 'Seniors', etc.
+      - name: age_bucket
+        description: Age range bucket of the voter.
+      - name: urbanacity
+        description: Urbanicity of the voter, categorized as 'Rural', 'Suburban', or 'Urban'.
+      - name: voting_history
+        description: Voting history of the voter, indicating the type of elections they participated in.
+      - name: political_party
+        description: Political party affiliation of the voter, mapped to 'Democrat', 'Republican', 'Independent', or 'Unknown'.
+      - name: harris_support_score
+        description: Support score of the voter based on Harris polling.
+      - name: harris_support_level
+        description: Support level categorized based on the Harris support score (Low, Moderate, or High Support).
+
+  - name: rpt_not_returned_ballots_by_dims
+    description: >
+      This model joins early voting data, demographic details, and support scores to create a universe of voters with ballots outstanding.
+    columns:
+      - name: avev_id
+        description: Unique ID from the early voting dataset.
+      - name: myv_van_id
+        description: VAN ID associated with the voter.
+      - name: ballot_rejected
+        description: Indicates whether the ballot was rejected (1 = rejected).
+      - name: early_voted
+        description: Indicates whether the individual early voted (1 = voted early).
+      - name: ballot_curable
+        description: Indicates whether the rejected ballot can be cured (1 = curable).
+      - name: reason_ballot_rejected
+        description: The reason the ballot was rejected.
+      - name: county_name_upper
+        description: Uppercase county name, coalesced from different sources.
+      - name: county_name_reg
+        description: County name in regular case, coalesced from different sources.
+      - name: gender
+        description: Gender of the voter, mapped to 'Male', 'Female', or 'Unknown'.
+      - name: ethnicity
+        description: Ethnicity of the voter, mapped to common ethnicity names.
+      - name: white_yes_no
+        description: Indicates if the voter is White (1 = White, 0 = Not White, null if unknown).
+      - name: religion
+        description: Religion of the voter, mapped to standardized religious groups.
+      - name: education_level
+        description: Education level of the voter, categorized as 'College', 'Non-College', or 'Unknown'.
+      - name: generation
+        description: Generation of the voter, mapped to age ranges such as 'Gen Z', 'Seniors', etc.
+      - name: age_bucket
+        description: Age range bucket of the voter.
+      - name: urbanacity
+        description: Urbanicity of the voter, categorized as 'Rural', 'Suburban', or 'Urban'.
+      - name: voting_history
+        description: Voting history of the voter, indicating the type of elections they participated in.
+      - name: political_party
+        description: Political party affiliation of the voter, mapped to 'Democrat', 'Republican', 'Independent', or 'Unknown'.
+      - name: harris_support_score
+        description: Support score of the voter based on Harris polling.
+      - name: harris_support_level
+        description: Support level categorized based on the Harris support score (Low, Moderate, or High Support).
